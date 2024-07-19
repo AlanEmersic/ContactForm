@@ -1,5 +1,69 @@
 ﻿@page "/"
+@using MediatR
+@using ContactForm.Application.Users.Commands
+@using ContactForm.Web.Components.Models
+@using ErrorOr
+@rendermode InteractiveServer
+@inject ISender mediator
 
 <PageTitle>Contact form</PageTitle>
 
-<h1>Contact form</h1>
+<div>
+    <h3>Contact Form</h3>
+
+    <EditForm Enhance="true" Model="request" OnValidSubmit="HandleSubmit" FormName="contactForm" class="form">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div>
+            <label for="firstName">First name:</label>
+            <InputText id="firstName" @bind-Value="request.FirstName" />
+        </div>
+        <div>
+            <label for="lastName">Last name:</label>
+            <InputText id="lastName" @bind-Value="request.LastName" />
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <InputText type="email" id="email" @bind-Value="request.Email" />
+        </div>
+        <button type="submit">Submit</button>
+    </EditForm>
+
+    @if (!string.IsNullOrEmpty(successMessage))
+    {
+        <div class="success-message">@successMessage</div>
+    }
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="error-message">@errorMessage</div>
+    }
+</div>
+
+@code {
+    private ContactFormModel request = new();
+    private string successMessage = string.Empty;
+    private string errorMessage = string.Empty;
+
+    private async Task HandleSubmit()
+    {
+        ErrorOr<Created> result = await mediator.Send(new CreateUserContactCommand(request.FirstName, request.LastName, request.Email));
+
+        result.Match(
+            _ =>
+            {
+                successMessage = "Contact form submitted successfully!";
+                errorMessage = string.Empty;
+                request = new ContactFormModel();
+
+                return string.Empty;
+            },
+            error =>
+            {
+                successMessage = string.Empty;
+                errorMessage = error.First().Description;
+
+                return string.Empty;
+            });
+    }
+}

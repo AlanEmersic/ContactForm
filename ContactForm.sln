@@ -5,21 +5,18 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{86190615-698F-4112-B949-A3DDE2527633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactForm.Web", "src\ContactForm.Web\ContactForm.Web.csproj", "{F6E261E4-C81A-4522-8F91-9AF9408D962A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactForm.Web", "src\ContactForm.Web\ContactForm.Web.csproj", "{F6E261E4-C81A-4522-8F91-9AF9408D962A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactForm.Application", "src\ContactForm.Application\ContactForm.Application.csproj", "{CB3452D0-962F-4E32-B897-561553D98476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactForm.Application", "src\ContactForm.Application\ContactForm.Application.csproj", "{CB3452D0-962F-4E32-B897-561553D98476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactForm.Domain", "src\ContactForm.Domain\ContactForm.Domain.csproj", "{461814D3-7C18-4E02-97FA-1FC6A7D3E3CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactForm.Domain", "src\ContactForm.Domain\ContactForm.Domain.csproj", "{461814D3-7C18-4E02-97FA-1FC6A7D3E3CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactForm.Infrastructure", "src\ContactForm.Infrastructure\ContactForm.Infrastructure.csproj", "{A505B995-1AAF-425D-A0F4-C5256278307C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactForm.Infrastructure", "src\ContactForm.Infrastructure\ContactForm.Infrastructure.csproj", "{A505B995-1AAF-425D-A0F4-C5256278307C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F6E261E4-C81A-4522-8F91-9AF9408D962A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,6 +35,9 @@ Global
 		{A505B995-1AAF-425D-A0F4-C5256278307C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A505B995-1AAF-425D-A0F4-C5256278307C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A505B995-1AAF-425D-A0F4-C5256278307C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F6E261E4-C81A-4522-8F91-9AF9408D962A} = {86190615-698F-4112-B949-A3DDE2527633}

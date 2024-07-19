@@ -1,0 +1,2 @@
+CREATE VIEW VW_BizEmails AS
+SELECT * FROM Users WHERE Email LIKE '%.biz'
